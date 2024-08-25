@@ -19,5 +19,13 @@ fun SetupNavigationGraph(navController: NavHostController) {
         composable(route = Screen.Home.route) {
 
         }
+
+        composable(route = Screen.Settings.route) {
+
+        }
+
+        composable(route = Screen.Cities.route) {
+
+        }
     }
 }
