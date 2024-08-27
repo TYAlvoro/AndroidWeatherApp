@@ -20,15 +20,15 @@ fun SetupNavigationGraph(navController: NavHostController) {
         }
 
         composable(route = Screen.Home.route) {
-            HomeScreen(navController = navController)
+            HomeScreen.Display(navController = navController)
         }
 
         composable(route = Screen.Settings.route) {
-            SettingsScrфeen(navController = navController)
+            SettingsScreen.Display(navController = navController)
         }
 
         composable(route = Screen.Cities.route) {
-            SearchScreen(navController = navController)
+            SearchScreen.Display(navController = navController)
         }
     }
 }
