@@ -1,7 +1,9 @@
 package com.example.weatherapp
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -31,7 +33,7 @@ sealed class BaseScreen {
     @Composable
     open fun Content(paddingValues: PaddingValues) {
         LazyColumn(
-            modifier = Modifier.padding(paddingValues)
+            modifier = Modifier.fillMaxSize().background(Color(0xfff7f7f7)).padding(paddingValues)
         ) {
             items(10) { index ->
                 Text(
