@@ -16,7 +16,7 @@ data object SearchScreen : BaseScreen() {
     fun Display(navController: NavHostController) {
         Scaffold(
             bottomBar = {
-                BottomNavigationBar(navController)
+                BottomNavigationBar(navController = navController, activeScreen = "searchScreen")
             }
         ) { contentPadding ->
             Content(paddingValues = contentPadding)

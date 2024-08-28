@@ -45,8 +45,7 @@ sealed class BaseScreen {
     }
 
     @Composable
-    fun BottomNavigationBar(navController: NavHostController) {
-        var selectedItem by remember { mutableStateOf(0) }
+    fun BottomNavigationBar(navController: NavHostController, activeScreen: String) {
 
         BottomNavigation(
             backgroundColor = Color(0xff0851bf),
@@ -55,9 +54,8 @@ sealed class BaseScreen {
             val sunImage: Painter = painterResource(id = R.drawable.splash_sun)
 
             BottomNavigationItem(
-                selected = selectedItem == 0,
+                selected = activeScreen == "settingsScreen",
                 onClick = {
-                    selectedItem = 0
                     navController.navigate(Screen.Settings.route)
                 },
                 icon = {
@@ -65,15 +63,14 @@ sealed class BaseScreen {
                         imageVector = Icons.Default.Settings,
                         contentDescription = "Settings",
                         modifier = Modifier.size(35.dp),
-                        tint = if (selectedItem == 0) Color.Yellow else Color.White
+                        tint = if (activeScreen == "settingsScreen") Color(0xffa6c9ff) else Color.White
                     )
                 }
             )
 
             BottomNavigationItem(
-                selected = selectedItem == 1,
+                selected = activeScreen == "homeScreen",
                 onClick = {
-                    selectedItem = 1
                     navController.navigate(Screen.Home.route)
                 },
                 icon = {
@@ -87,9 +84,8 @@ sealed class BaseScreen {
             )
 
             BottomNavigationItem(
-                selected = selectedItem == 2,
+                selected = activeScreen == "searchScreen",
                 onClick = {
-                    selectedItem = 2
                     navController.navigate(Screen.Cities.route)
                 },
                 icon = {
@@ -97,7 +93,7 @@ sealed class BaseScreen {
                         imageVector = Icons.Default.Search,
                         contentDescription = "Search",
                         modifier = Modifier.size(35.dp),
-                        tint = if (selectedItem == 2) Color.Yellow else Color.White
+                        tint = if (activeScreen == "searchScreen") Color(0xffa6c9ff) else Color.White
                     )
                 }
             )

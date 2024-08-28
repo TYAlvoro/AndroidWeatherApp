@@ -11,12 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
+
 data object HomeScreen : BaseScreen() {
     @Composable
     fun Display(navController: NavHostController) {
         Scaffold(
             bottomBar = {
-                BottomNavigationBar(navController)
+                BottomNavigationBar(navController = navController, activeScreen = "homeScreen")
             }
         ) { contentPadding ->
             Content(paddingValues = contentPadding)

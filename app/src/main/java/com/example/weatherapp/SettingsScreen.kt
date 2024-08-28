@@ -16,7 +16,7 @@ data object SettingsScreen : BaseScreen() {
     fun Display(navController: NavHostController) {
         Scaffold(
             bottomBar = {
-                BottomNavigationBar(navController)
+                BottomNavigationBar(navController = navController, activeScreen = "settingsScreen")
             }
         ) { contentPadding ->
             Content(paddingValues = contentPadding)
