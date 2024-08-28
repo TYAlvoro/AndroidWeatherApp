@@ -1,6 +1,5 @@
 package com.example.weatherapp.navigation
 
-import com.example.weatherapp.BaseScreen
 
 sealed class Screen(val route: String){
     object Splash : Screen(route = "splashScreen")

@@ -5,7 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.BottomNavigation
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -57,16 +59,16 @@ sealed class BaseScreen {
             val cloudImage: Painter = painterResource(id = R.drawable.splash_cloud)
 
             BottomNavigationItem(
-                selected = activeScreen == "settingsScreen",
+                selected = activeScreen == "searchScreen",
                 onClick = {
-                    navController.navigate(Screen.Settings.route)
+                    navController.navigate(Screen.Cities.route)
                 },
                 icon = {
                     Icon(
-                        imageVector = Icons.Default.Settings,
-                        contentDescription = "Settings",
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "Search",
                         modifier = Modifier.size(35.dp),
-                        tint = if (activeScreen == "settingsScreen") Color(0xffa6c9ff) else Color.White
+                        tint = if (activeScreen == "searchScreen") Color(0xffa6c9ff) else Color.White
                     )
                 }
             )
@@ -99,16 +101,16 @@ sealed class BaseScreen {
             )
 
             BottomNavigationItem(
-                selected = activeScreen == "searchScreen",
+                selected = activeScreen == "settingsScreen",
                 onClick = {
-                    navController.navigate(Screen.Cities.route)
+                    navController.navigate(Screen.Settings.route)
                 },
                 icon = {
                     Icon(
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "Search",
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "Settings",
                         modifier = Modifier.size(35.dp),
-                        tint = if (activeScreen == "searchScreen") Color(0xffa6c9ff) else Color.White
+                        tint = if (activeScreen == "settingsScreen") Color(0xffa6c9ff) else Color.White
                     )
                 }
             )
