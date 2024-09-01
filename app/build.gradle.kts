@@ -66,11 +66,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation("androidx.navigation:navigation-compose:2.5.3")
-    implementation ("androidx.compose.material:material:1.5.1")
-    implementation("io.ktor:ktor-client-core:2.6.0")
-    implementation("io.ktor:ktor-client-cio:2.6.0")
-    implementation("io.ktor:ktor-client-json:2.6.0")
-    implementation("io.ktor:ktor-client-serialization:2.6.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    implementation(libs.androidx.navigation.compose)
+    implementation (libs.androidx.material)
 }
