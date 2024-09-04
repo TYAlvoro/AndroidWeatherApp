@@ -1,4 +1,4 @@
-package com.example.weatherapp
+package com.example.weatherapp.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,13 +14,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
-
-data object HomeScreen : BaseScreen() {
+data object SearchScreen : BaseScreen() {
     @Composable
     fun Display(navController: NavHostController) {
         Scaffold(
             bottomBar = {
-                BottomNavigationBar(navController = navController, activeScreen = "homeScreen")
+                BottomNavigationBar(navController = navController, activeScreen = "searchScreen")
             }
         ) { contentPadding ->
             Content(paddingValues = contentPadding)
@@ -32,7 +31,7 @@ data object HomeScreen : BaseScreen() {
         LazyColumn(
             modifier = Modifier.fillMaxSize().background(Color(0xfff7f7f7)).padding(paddingValues)
         ) {
-            items(5) { index ->
+            items(10) { index ->
                 Text(
                     text = "Item $index",
                     modifier = Modifier

@@ -1,7 +1,7 @@
-package com.example.weatherapp.repository
+package com.example.weatherapp.api.repository
 
-import com.example.weatherapp.model.WeatherResponse
-import com.example.weatherapp.network.OpenWeatherApi
+import com.example.weatherapp.api.model.WeatherResponse
+import com.example.weatherapp.api.network.OpenWeatherApi
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

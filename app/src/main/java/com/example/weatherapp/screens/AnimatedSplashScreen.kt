@@ -1,4 +1,4 @@
-package com.example.weatherapp
+package com.example.weatherapp.screens
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.animateDpAsState
@@ -31,7 +31,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.weatherapp.navigation.Screen
+import com.example.weatherapp.R
+import com.example.weatherapp.api.navigation.Screen
 import kotlinx.coroutines.delay
 
 @Composable

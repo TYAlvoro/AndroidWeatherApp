@@ -1,4 +1,4 @@
-package com.example.weatherapp.navigation
+package com.example.weatherapp.api.navigation
 
 
 sealed class Screen(val route: String){

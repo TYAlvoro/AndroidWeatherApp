@@ -6,8 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
-import com.example.weatherapp.navigation.SetupNavigationGraph
-import com.example.weatherapp.repository.GetWeather
+import com.example.weatherapp.api.navigation.SetupNavigationGraph
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

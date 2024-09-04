@@ -1,4 +1,4 @@
-package com.example.weatherapp
+package com.example.weatherapp.screens
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
@@ -23,8 +23,9 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.example.weatherapp.navigation.Screen
-import com.example.weatherapp.repository.GetWeather
+import com.example.weatherapp.R
+import com.example.weatherapp.api.navigation.Screen
+import com.example.weatherapp.api.repository.GetWeather
 
 sealed class BaseScreen {
     @Composable
