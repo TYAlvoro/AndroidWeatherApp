@@ -95,7 +95,7 @@ data object SearchScreen : BaseScreen() {
                 .fillMaxWidth()
                 .background(Color.White)
                 .border(BorderStroke(1.dp, Color.Black))
-                .padding(8.dp)
+                .padding(20.dp)
         ) {
             TextField(
                 value = searchQuery,
