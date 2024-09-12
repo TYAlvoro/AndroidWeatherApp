@@ -18,7 +18,7 @@ fun getCity() {
         .build()
 
     val weatherApi = retrofit.create(OpenWeatherApi::class.java)
-    val call = weatherApi.getCity(city, apiKey)
+    val call = weatherApi.getCurrentCity(city, apiKey)
 
     call.enqueue(object : Callback<List<CityResponse>> {
         override fun onResponse(call: Call<List<CityResponse>>, response: Response<List<CityResponse>>) {

@@ -37,6 +37,8 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.weatherapp.api.repository.getCity
+import com.example.weatherapp.api.repository.getWeather
 
 data object SearchScreen : BaseScreen() {
     @Composable
@@ -96,6 +98,7 @@ data object SearchScreen : BaseScreen() {
             )
         }
     }
+
 
     @Composable
     fun SearchBar(
@@ -163,5 +166,8 @@ data object SearchScreen : BaseScreen() {
         }
     }
 
-    fun searchCity() {}
+    fun searchCity() {
+        getWeather()
+        getCity()
+    }
 }

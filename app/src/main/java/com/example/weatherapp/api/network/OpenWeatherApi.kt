@@ -15,7 +15,7 @@ interface OpenWeatherApi {
     ): Call<WeatherResponse>
 
     @GET("direct")
-    fun getCity(
+    fun getCurrentCity(
         @Query("q") city: String,
         @Query("appid") apiKey: String
     ): Call<List<CityResponse>>
