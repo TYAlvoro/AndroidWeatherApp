@@ -8,15 +8,15 @@ import retrofit2.http.Query
 
 interface OpenWeatherApi {
     @GET("weather")
-    fun GetCurrentWeather(
+    fun getCurrentWeather(
         @Query("q") city: String,
         @Query("appid") apiKey: String,
         @Query("units") units: String = "metric",
     ): Call<WeatherResponse>
 
-    @GET("city")
-    fun GetCity(
+    @GET("direct")
+    fun getCity(
         @Query("q") city: String,
         @Query("appid") apiKey: String
-    ): Call<CityResponse>
+    ): Call<List<CityResponse>>
 }

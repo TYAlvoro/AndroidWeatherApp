@@ -8,7 +8,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-fun GetCity() {
+fun getCity() {
     val city = "Москва"
     val apiKey = "ed9166e9dc883b7cb80ffad49337ac92"
 
@@ -18,22 +18,27 @@ fun GetCity() {
         .build()
 
     val weatherApi = retrofit.create(OpenWeatherApi::class.java)
-    val call = weatherApi.GetCity(city, apiKey)
+    val call = weatherApi.getCity(city, apiKey)
 
-    call.enqueue(object : Callback<CityResponse> {
-        override fun onResponse(call: Call<CityResponse>, response: Response<CityResponse>) {
+    call.enqueue(object : Callback<List<CityResponse>> {
+        override fun onResponse(call: Call<List<CityResponse>>, response: Response<List<CityResponse>>) {
             if (response.isSuccessful) {
-                val cityResponse = response.body()
-                println("Город: ${cityResponse?.name}")
-                println("Широта: ${cityResponse?.lat}")
-                println("Долгота: ${cityResponse?.lon}")
+                val cityList = response.body()
+                if (!cityList.isNullOrEmpty()) {
+                    val cityResponse = cityList[0]
+                    println("Город: ${cityResponse.name}")
+                    println("Широта: ${cityResponse.lat}")
+                    println("Долгота: ${cityResponse.lon}")
+                } else {
+                    println("Город не найден")
+                }
             } else {
-                println(response.code())
+                println("Ошибка: ${response.code()}")
             }
         }
 
-        override fun onFailure(call: Call<CityResponse>, t: Throwable) {
-            println(t.message)
+        override fun onFailure(call: Call<List<CityResponse>>, t: Throwable) {
+            println("Ошибка: ${t.message}")
         }
     })
 }

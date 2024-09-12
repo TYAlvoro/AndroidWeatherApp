@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -38,8 +37,6 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.weatherapp.api.repository.GetCity
-import com.example.weatherapp.api.repository.GetWeather
 
 data object SearchScreen : BaseScreen() {
     @Composable
@@ -166,8 +163,5 @@ data object SearchScreen : BaseScreen() {
         }
     }
 
-    fun searchCity() {
-        GetWeather()
-        GetCity()
-    }
+    fun searchCity() {}
 }

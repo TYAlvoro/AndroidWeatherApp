@@ -8,7 +8,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-fun GetWeather() {
+fun getWeather() {
     val city = "Москва"
     val apiKey = "ed9166e9dc883b7cb80ffad49337ac92"
 
@@ -18,7 +18,7 @@ fun GetWeather() {
         .build()
 
     val weatherApi = retrofit.create(OpenWeatherApi::class.java)
-    val call = weatherApi.GetCurrentWeather(city, apiKey)
+    val call = weatherApi.getCurrentWeather(city, apiKey)
 
     call.enqueue(object : Callback<WeatherResponse> {
         override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {

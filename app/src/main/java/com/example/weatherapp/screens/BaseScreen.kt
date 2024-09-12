@@ -25,8 +25,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.weatherapp.R
 import com.example.weatherapp.api.navigation.Screen
-import com.example.weatherapp.api.repository.GetCity
-import com.example.weatherapp.api.repository.GetWeather
 
 sealed class BaseScreen {
     @Composable
@@ -65,7 +63,6 @@ sealed class BaseScreen {
                 selected = activeScreen == "searchScreen",
                 onClick = {
                     navController.navigate(Screen.Cities.route)
-                    GetCity()
                 },
                 icon = {
                     Icon(
