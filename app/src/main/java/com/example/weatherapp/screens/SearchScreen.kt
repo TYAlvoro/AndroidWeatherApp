@@ -38,6 +38,8 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import com.example.weatherapp.api.repository.GetCity
+import com.example.weatherapp.api.repository.GetWeather
 
 data object SearchScreen : BaseScreen() {
     @Composable
@@ -165,6 +167,7 @@ data object SearchScreen : BaseScreen() {
     }
 
     fun searchCity() {
-
+        GetWeather()
+        GetCity()
     }
 }

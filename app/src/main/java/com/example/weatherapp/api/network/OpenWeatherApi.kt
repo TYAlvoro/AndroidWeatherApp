@@ -1,5 +1,6 @@
 package com.example.weatherapp.api.network
 
+import com.example.weatherapp.api.model.CityResponse
 import com.example.weatherapp.api.model.WeatherResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -12,4 +13,10 @@ interface OpenWeatherApi {
         @Query("appid") apiKey: String,
         @Query("units") units: String = "metric",
     ): Call<WeatherResponse>
+
+    @GET("city")
+    fun GetCity(
+        @Query("q") city: String,
+        @Query("appid") apiKey: String
+    ): Call<CityResponse>
 }
