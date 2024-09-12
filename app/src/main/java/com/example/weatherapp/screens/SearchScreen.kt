@@ -49,7 +49,7 @@ data object SearchScreen : BaseScreen() {
                 SearchBar(
                     searchQuery = searchQuery,
                     onQueryChanged = { searchQuery = it },
-                    onSearchClicked = {}
+                    onSearchClicked = { searchCity() }
                 )
             },
             bottomBar = {
@@ -68,7 +68,7 @@ data object SearchScreen : BaseScreen() {
                 .background(Color(0xfff7f7f7))
                 .padding(paddingValues)
         ) {
-            items(0) { index ->
+            items(2) { index ->
                 ItemCard(index = index)
             }
         }
@@ -78,15 +78,16 @@ data object SearchScreen : BaseScreen() {
     fun ItemCard(index : Int) {
         Card (
             modifier = Modifier
-                .padding(16.dp)
-                .fillMaxWidth(),
+                .padding(vertical = 8.dp, horizontal = 16.dp)
+                .fillMaxWidth()
+                .height(100.dp),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 2.dp,
             ),
             colors = CardDefaults.cardColors(
-                containerColor = Color.DarkGray,
+                containerColor = Color.White,
             ),
-            border = BorderStroke(1.dp, Color.Black),
+            border = BorderStroke(1.dp, Color(0xffb0b0b0)),
             shape = RoundedCornerShape(10.dp)
         ) {
             Text(
@@ -105,7 +106,7 @@ data object SearchScreen : BaseScreen() {
     ) {
         Row(
             modifier = Modifier
-                .padding(top = 30.dp, start = 10.dp, end = 10.dp, bottom = 10.dp)
+                .padding(top = 30.dp, start = 10.dp, end = 10.dp, bottom = 20.dp)
                 .fillMaxWidth()
                 .height(55.dp)
                 .background(Color.White, shape = RoundedCornerShape(20.dp))
@@ -123,17 +124,17 @@ data object SearchScreen : BaseScreen() {
                     Text(
                         text = "Найти город...",
                         style = TextStyle(
-                            fontSize = 16.sp, // Размер шрифта плейсхолдера
-                            fontFamily = FontFamily.Serif, // Шрифт плейсхолдера
-                            color = Color.Gray // Цвет плейсхолдера
+                            fontSize = 16.sp,
+                            fontFamily = FontFamily.Serif,
+                            color = Color.Gray
                         )
                     )
                 },
                 singleLine = true,
                 textStyle = TextStyle(
-                    fontSize = 16.sp, // Размер шрифта текста
-                    fontFamily = FontFamily.Serif, // Шрифт текста
-                    color = Color.Black // Цвет текста
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily.Serif,
+                    color = Color.Black
                 ),
                 colors = TextFieldDefaults.colors(
                     unfocusedContainerColor = Color.Transparent,
@@ -143,23 +144,27 @@ data object SearchScreen : BaseScreen() {
                     focusedIndicatorColor = Color.Transparent
                 ),
                 keyboardOptions = KeyboardOptions(
-                    capitalization = KeyboardCapitalization.Sentences // Каждое предложение с большой буквы
+                    capitalization = KeyboardCapitalization.Sentences
                 )
             )
 
             IconButton(
                 onClick = onSearchClicked,
-                modifier = Modifier.size(40.dp) // Устанавливаем размер кнопки
+                modifier = Modifier.size(40.dp)
             ) {
                 Icon(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(end = 4.dp),
-                    imageVector = Icons.Default.Search, // Иконка лупы
+                    imageVector = Icons.Default.Search,
                     contentDescription = "Search",
-                    tint = Color.Black // Цвет иконки
+                    tint = Color.Black
                 )
             }
         }
+    }
+
+    fun searchCity() {
+
     }
 }
